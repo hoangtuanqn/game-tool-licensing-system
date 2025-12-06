@@ -25,9 +25,9 @@ DELIMITER $$
 --
 -- Các hàm
 --
-CREATE DEFINER=`root`@`localhost` FUNCTION `SPLIT_STR` (`x` VARCHAR(255), `delim` VARCHAR(12), `pos` INT) RETURNS VARCHAR(255) CHARSET utf8mb4 COLLATE utf8mb4_general_ci  RETURN REPLACE(SUBSTRING(SUBSTRING_INDEX(x, delim, pos),
-       CHAR_LENGTH(SUBSTRING_INDEX(x, delim, pos -1)) + 1),
-       delim, "")$$
+CREATE DEFINER=`root`@`localhost` FUNCTION `SPLIT_STR` (`x` VARCHAR(255), `delim` VARCHAR(12), `pos` INT) RETURNS VARCHAR(255) CHARSET utf8mb4 COLLATE utf8mb4_general_ci DETERMINISTIC RETURN REPLACE(SUBSTRING(SUBSTRING_INDEX(x, delim, pos),
+    CHAR_LENGTH(SUBSTRING_INDEX(x, delim, pos -1)) + 1),
+    delim, "");
 
 DELIMITER ;
 

@@ -1,5 +1,3 @@
-
-
 <body>
     <!-- header-area -->
     <header class="third-header-bg home-six-header">
@@ -11,9 +9,9 @@
                         <div class="header-top-social">
                             <ul>
                                 <li>Follow</li>
-                                <li><a href="<?=$TUANORI->site('fbadmin');?>"><i class="fab fa-facebook-f"></i></a>
+                                <li><a href="<?= $TUANORI->site('fbadmin'); ?>"><i class="fab fa-facebook-f"></i></a>
                                 </li>
-                                <li><a href="<?=$TUANORI->site('ytbadmin');?>"><i class="fa-brands fa-youtube"></i></a>
+                                <li><a href="<?= $TUANORI->site('ytbadmin'); ?>"><i class="fa-brands fa-youtube"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -29,7 +27,7 @@
                         <div class="main-menu menu-style-two">
                             <nav>
                                 <div class="logo d-block d-lg-none">
-                                    <a href="/"><img src="/public/uploads/resize/logo_r90team.png" alt="Logo">
+                                    <a href="/"><img src="<?= $TUANORI->site('logo') ?>" alt="Logo" width="160px">
                                     </a>
                                 </div>
                                 <div class="navbar-wrap d-none d-lg-flex">
@@ -49,7 +47,7 @@
 
                                         <li><a href="#">Hệ thống <span class="badge bg-warning text-dark">NEW</span> <i class="fas fa-sort-down"></i></a>
                                             <ul class="submenu" style="left: 0px;">
-                                                <li><a href="/client/chuyentien">Chuyển tiền  <span class="badge bg-warning text-dark">NEW</span></a></li>
+                                                <li><a href="/client/chuyentien">Chuyển tiền <span class="badge bg-warning text-dark">NEW</span></a></li>
                                                 <li><a href="/client/giftcode">Giftcode <span class="badge bg-danger">HOT</span></a></li>
                                             </ul>
                                         </li>
@@ -71,39 +69,39 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <div class="logo">
-                                        <a href="/"><img src="<?=$TUANORI->site('logo')?>" alt="Logo">
+                                    <div class="logo mt-2">
+                                        <a href="/" class="d-block"><img src="<?= $TUANORI->site('logo') ?>" alt="Logo" width="150px">
                                         </a>
                                     </div>
-                                    <?php if(empty($_COOKIE['token'])) { ?>
-                                    <ul class="right">
-                                        <div class="header-top-login-2">
-                                            <ul>
-                                                <li class="btn-auth"><a href="/client/register"><i class="far fa-edit"></i>Đăng ký</a>
-                                                </li>
-                                                <li class="or">hoặc</li>
-                                                <li class="btn-auth"><a href="/client/login"><i class="far fa-edit"></i>Đăng nhập</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </ul>
+                                    <?php if (empty($_COOKIE['token'])) { ?>
+                                        <ul class="right">
+                                            <div class="header-top-login-2">
+                                                <ul>
+                                                    <li class="btn-auth"><a href="/client/register"><i class="far fa-edit"></i>Đăng ký</a>
+                                                    </li>
+                                                    <li class="or">hoặc</li>
+                                                    <li class="btn-auth"><a href="/client/login"><i class="far fa-edit"></i>Đăng nhập</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </ul>
                                     <?php } else { ?>
-                                    <ul class="right">
-                                        <li><a href="/cart.html">Giảm giá: <span style="color:#bcee0e;" id="cart-header"><?=$getUser['discount'];?>%</span></a>
-                                        </li>
-                                        <li class="info-user">
-                                            <a href="#"> USER-ID: <span class="font-bold"><?=$getUser['id'];?> </span> / Số dư:  <?=format_cash($getUser['money']);?> đ</a>
-                                            <ul class="submenu">
-                                                <li><a href="#">UserID: <span>#<?=$getUser['id'];?></span></a></li>
-                                                <?php if($getUser['level'] == 'admin') { ?>
-                                                    <li><a href="/Admin">Panel Admin</a></li>
-                                                <?php } ?>
-                                                <li><a href="/client/history/key">Lịch sử mua hàng</a></li>
-                                                <li><a href="/client/history/napthe">Lịch sử nạp tiền</a></li>
-                                                <li><a href="#" class="log-out">Đăng xuất</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                        <ul class="right">
+                                            <li><a href="/cart.html">Giảm giá: <span style="color:#bcee0e;" id="cart-header"><?= $getUser['discount']; ?>%</span></a>
+                                            </li>
+                                            <li class="info-user">
+                                                <a href="#"> USER-ID: <span class="font-bold"><?= $getUser['id']; ?> </span> / Số dư: <?= format_cash($getUser['money']); ?> đ</a>
+                                                <ul class="submenu">
+                                                    <li><a href="#">UserID: <span>#<?= $getUser['id']; ?></span></a></li>
+                                                    <?php if ($getUser['level'] == 'admin') { ?>
+                                                        <li><a href="/Admin">Panel Admin</a></li>
+                                                    <?php } ?>
+                                                    <li><a href="/client/history/key">Lịch sử mua hàng</a></li>
+                                                    <li><a href="/client/history/napthe">Lịch sử nạp tiền</a></li>
+                                                    <li><a href="#" class="log-out">Đăng xuất</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
                                     <?php } ?>
 
                                 </div>
@@ -128,7 +126,7 @@
                                         </li>
                                         <li><a href="#">Hệ thống</a>
                                             <ul class="submenu" style="left: 0px;">
-                                                <li><a href="/">Chuyển tiền  <span class="badge bg-warning text-dark">NEW</span></a>
+                                                <li><a href="/">Chuyển tiền <span class="badge bg-warning text-dark">NEW</span></a>
                                                 </li>
                                                 <li><a href="/">Giftcode <span class="badge bg-danger">HOT</span></a>
                                                 </li>

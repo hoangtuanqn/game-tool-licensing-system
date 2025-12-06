@@ -1,7 +1,4 @@
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-RewriteEngine On
 
 # RewriteRule ^Auth/Profile$ public/client/Profile.php [L]
 # RewriteRule ^Blog/([A-Za-z0-9-]+) public/client/XemBlog.php?id=$1 [L]
